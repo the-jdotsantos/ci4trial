@@ -61,5 +61,46 @@ public function edit($id)
                         return redirect()->to('/forum');
                     }
  
+public function weather()
+{
+    helper('url'); // Just in case
+
+    $client = \Config\Services::curlrequest();
+
+    $url = 'https://api.open-meteo.com/v1/forecast?latitude=14.6481&longitude=121.1133&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m';
+
+    $response = $client->get($url);
+    $body = json_decode($response->getBody(), true);
+
+    $data['current'] = $body['current'] ?? null;
+    $data['hourly'] = $body['hourly'] ?? null;
+
+    return view('forum/weather', $data);
+}                    
     
+public function weatherDaily()
+{
+    helper('url');
+    $client = \Config\Services::curlrequest();
+
+    // Daily weather data
+    $weatherUrl = 'https://archive-api.open-meteo.com/v1/archive?latitude=14.6481&longitude=121.1133&start_date=2024-01-01&end_date=2024-12-31&daily=weather_code,precipitation_sum,rain_sum,precipitation_hours,wind_gusts_10m_max&timezone=auto';
+
+    // River discharge flood data
+    $floodUrl = 'https://flood-api.open-meteo.com/v1/flood?latitude=14.6481&longitude=121.1133&daily=river_discharge&timezone=auto&start_date=2024-01-01&end_date=2024-12-31';
+
+    $weatherResponse = $client->get($weatherUrl);
+    $floodResponse = $client->get($floodUrl);
+
+    $weatherData = json_decode($weatherResponse->getBody(), true);
+    $floodData = json_decode($floodResponse->getBody(), true);
+
+    $data['weather'] = $weatherData['daily'] ?? null;
+    $data['flood'] = $floodData['daily'] ?? null;
+
+    return view('forum/weather_daily', $data);
+}
+
+
+
 }

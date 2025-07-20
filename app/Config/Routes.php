@@ -27,5 +27,11 @@ $routes->post('forum/update/(:num)', 'Forum::update/$1');
 //admin edit
 $routes->get('admin/edit/(:num)', 'Admin::edit/$1');
 $routes->post('admin/update/(:num)', 'Admin::update/$1');
+// open meteo 
+$routes->get('/weather', 'Forum::weather');
+$routes->get('/weather-daily', 'Forum::weatherDaily');
+//predictor
+$routes->get('flood/predict', 'FloodPredictor::predict');
+
 
 

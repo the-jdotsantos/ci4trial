@@ -1,0 +1,14 @@
+CRITICAL - 2025-07-09 06:14:45 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: api.open-meteo.com
+[Method: GET, Route: flood/predict]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 711.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(711): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: api.open-meteo.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(381): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(150): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://api.open-meteo.com/v1/forecast?latitude=14.657293&longitude=121.11524&daily=weather_code,precipitation_sum,rain_sum,precipitation_hours,temperature_2m_max,temperature_2m_min,sunshine_duration,wind_speed_10m_max,wind_gusts_10m_max,shortwave_radiation_sum&timezone=auto&start_date=2025-07-09&end_date=2025-07-09')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(185): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://api.open-meteo.com/v1/forecast?latitude=14.657293&longitude=121.11524&daily=weather_code,precipitation_sum,rain_sum,precipitation_hours,temperature_2m_max,temperature_2m_min,sunshine_duration,wind_speed_10m_max,wind_gusts_10m_max,shortwave_radiation_sum&timezone=auto&start_date=2025-07-09&end_date=2025-07-09', [])
+ 5 APPPATH\Controllers\FloodPredictor.php(22): CodeIgniter\HTTP\CURLRequest->get('https://api.open-meteo.com/v1/forecast?latitude=14.657293&longitude=121.11524&daily=weather_code,precipitation_sum,rain_sum,precipitation_hours,temperature_2m_max,temperature_2m_min,sunshine_duration,wind_speed_10m_max,wind_gusts_10m_max,shortwave_radiation_sum&timezone=auto&start_date=2025-07-09&end_date=2025-07-09')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FloodPredictor->predict()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FloodPredictor))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

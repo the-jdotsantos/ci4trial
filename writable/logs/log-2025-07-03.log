@@ -1,0 +1,48 @@
+CRITICAL - 2025-07-03 02:51:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "forum/weather_daily.php"
+[Method: GET, Route: weather-daily]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('forum/weather_daily.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('forum/weather_daily', [], true)
+ 3 APPPATH\Controllers\Forum.php(94): view('forum/weather_daily', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->weatherDaily()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-03 02:54:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "forum/weather.php"
+[Method: GET, Route: weather]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('forum/weather.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('forum/weather', [], true)
+ 3 APPPATH\Controllers\Forum.php(78): view('forum/weather', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->weather()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-03 02:54:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "forum/weather.php"
+[Method: GET, Route: weather]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('forum/weather.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('forum/weather', [], true)
+ 3 APPPATH\Controllers\Forum.php(78): view('forum/weather', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->weather()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-03 02:54:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "forum/weather.php"
+[Method: GET, Route: weather]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('forum/weather.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('forum/weather', [], true)
+ 3 APPPATH\Controllers\Forum.php(78): view('forum/weather', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Forum->weather()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Forum))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

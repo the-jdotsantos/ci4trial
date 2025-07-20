@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2025 at 09:19 AM
+-- Generation Time: Jul 20, 2025 at 05:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `ci4_demo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `version` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `group` varchar(255) NOT NULL,
+  `namespace` varchar(255) NOT NULL,
+  `time` int(11) NOT NULL,
+  `batch` int(11) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -68,9 +84,50 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 (3, 'admin1', '$2y$10$IjDSfRSlVfQrmxzUf2Sa4.he3icNfB5VlkUtdkQFyL8Q2/b4RzNb2', 'admin'),
 (4, 'user123', '$2y$10$5ig/CvJwwR8f2m7ckuDoBOb4Ci0AH7Bc.FfeuBu/kTDPFL5rQOanO', 'user');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `weather_daily`
+--
+
+CREATE TABLE `weather_daily` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `lat` decimal(8,5) DEFAULT NULL,
+  `lon` decimal(8,5) DEFAULT NULL,
+  `weather_code` smallint(6) DEFAULT NULL,
+  `rain_sum_mm` decimal(5,2) DEFAULT NULL,
+  `precipitation_hours` decimal(4,1) DEFAULT NULL,
+  `temp_max_c` decimal(4,1) DEFAULT NULL,
+  `temp_min_c` decimal(4,1) DEFAULT NULL,
+  `river_discharge_m3s` decimal(7,2) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `weather_daily`
+--
+
+INSERT INTO `weather_daily` (`id`, `date`, `lat`, `lon`, `weather_code`, `rain_sum_mm`, `precipitation_hours`, `temp_max_c`, `temp_min_c`, `river_discharge_m3s`, `created_at`) VALUES
+(6, '2025-07-14', 14.65729, 121.11524, 95, 0.00, 16.0, 31.7, 26.6, 29.06, '2025-07-16 07:01:37'),
+(7, '2025-07-15', 14.65729, 121.11524, 96, 0.00, 17.0, 30.9, 26.5, 33.12, '2025-07-16 07:01:37'),
+(12, '2025-07-16', 14.65729, 121.11524, 95, 0.00, 21.0, 31.0, 26.0, 34.48, '2025-07-18 07:31:57'),
+(22, '2025-07-17', 14.65729, 121.11524, 96, 1.30, 20.0, 29.6, 25.9, 40.40, '2025-07-19 13:59:22'),
+(27, '2025-07-18', 14.65729, 121.11524, 95, 5.70, 24.0, 27.3, 25.7, 41.46, '2025-07-20 03:03:53'),
+(28, '2025-07-19', 14.65729, 121.11524, 95, 19.40, 24.0, 27.1, 25.4, 98.08, '2025-07-20 03:03:53'),
+(29, '2025-07-20', 14.65729, 121.11524, 80, 0.00, 24.0, 30.1, 26.0, 172.78, '2025-07-20 03:03:53'),
+(30, '2025-07-21', 14.65729, 121.11524, 95, 0.00, 23.0, 29.0, 25.7, 186.50, '2025-07-20 03:03:53'),
+(31, '2025-07-22', 14.65729, 121.11524, 95, 0.00, 21.0, 29.1, 24.7, 180.13, '2025-07-20 03:03:53');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `posts`
@@ -86,8 +143,21 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Indexes for table `weather_daily`
+--
+ALTER TABLE `weather_daily`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_idx` (`date`,`lat`,`lon`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -100,6 +170,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `weather_daily`
+--
+ALTER TABLE `weather_daily`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
